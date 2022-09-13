@@ -42,4 +42,5 @@ fs.readdir("./commands/", (_err, files) => {
 });
 
 // Login through the client
-client.login(config.token);
+client.login(process.env.DISCORD_TOKEN)
+    .catch((e) => { console.log(`[CLIENT_1] LOGIN ERROR: ${e}`); process.exit(0) })
